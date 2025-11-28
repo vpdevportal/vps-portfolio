@@ -26,6 +26,11 @@ server {
         try_files \$uri =404;
     }
     
+    # Serve root path explicitly
+    location = / {
+        try_files /index.html =404;
+    }
+    
     # Fallback to index.html for HTML routes
     location / {
         try_files \$uri \$uri/ /index.html;
