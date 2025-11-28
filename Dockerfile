@@ -21,36 +21,13 @@ FROM nginx:alpine
 # Copy built static files from builder
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copy nginx configuration (properly serve static assets)
-RUN echo 'server { \
-    listen 80; \
-    server_name _; \
-    root /usr/share/nginx/html; \
-    index index.html; \
-    \
-    # Serve static assets directly \
-    location ~* \.(png|jpg|jpeg|gif|ico|svg|pdf|docx|css|js|woff|woff2|ttf|eot)$ { \
-        expires 1y; \
-        add_header Cache-Control "public, immutable"; \
-        try_files $uri =404; \
-    } \
-    \
-    # Serve assets directory \
-    location /assets/ { \
-        expires 1y; \
-        add_header Cache-Control "public, immutable"; \
-        try_files $uri =404; \
-    } \
-    \
-    # Fallback to index.html for HTML routes \
-    location / { \
-        try_files $uri $uri/ /index.html; \
-    } \
-}' > /etc/nginx/conf.d/default.conf
+# Copy startup script that handles PORT environment variable
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 
-# Expose port 80
-EXPOSE 80
+# Expose port 80 (default) and 3000 (for Coolify)
+EXPOSE 80 3000
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start nginx with dynamic port support
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
