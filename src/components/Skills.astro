@@ -1,0 +1,33 @@
+---
+import { resumeData } from '../data/resume';
+---
+
+<section id="skills" class="section-container">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="section-title text-center mb-4">Skills & Technologies</h2>
+    <p class="section-subtitle text-center mb-12">
+      Technologies I work with
+    </p>
+
+    {resumeData.skills.length > 0 ? (
+      <div class="flex flex-wrap gap-3 justify-center">
+        {resumeData.skills.map((skill) => (
+          <span class="px-4 py-2 rounded-full bg-dark-card border border-gray-800 text-gray-300 hover:border-accent-primary hover:text-accent-primary transition-all duration-300">
+            {skill}
+          </span>
+        ))}
+      </div>
+    ) : (
+      <div class="text-center py-12">
+        <p class="text-gray-400 mb-6">Skills will be displayed here once extracted from your resume.</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <span class="px-4 py-2 rounded-full bg-dark-card border border-gray-800 text-gray-300">JavaScript</span>
+          <span class="px-4 py-2 rounded-full bg-dark-card border border-gray-800 text-gray-300">TypeScript</span>
+          <span class="px-4 py-2 rounded-full bg-dark-card border border-gray-800 text-gray-300">React</span>
+          <span class="px-4 py-2 rounded-full bg-dark-card border border-gray-800 text-gray-300">Node.js</span>
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+

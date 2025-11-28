@@ -1,0 +1,80 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+.astro/
+.output/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.*.local
+*.env.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# SSH Keys and sensitive files
+*.pem
+*.key
+*.ppk
+id_rsa
+id_rsa.pub
+*.priv
+*.private
+
+# Server configuration files with sensitive data
+server-config.env
+
+# Backup files
+*.backup
+*.bak
+
+# Package manager files (keep package-lock.json for npm consistency)
+yarn.lock
+pnpm-lock.yaml
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+*.local
