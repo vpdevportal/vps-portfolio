@@ -6,13 +6,20 @@ export default {
     extend: {
       colors: {
         dark: {
-          bg: '#0a0a0a',
-          surface: '#111111',
-          card: '#1a1a1a',
+          bg: '#000000',
+          surface: '#0a0a0a',
+          card: '#111111',
         },
         accent: {
           primary: '#00ff88',
           secondary: '#00d4ff',
+        },
+        green: {
+          gradient: {
+            start: '#00ff88',
+            end: '#00a855',
+            dark: '#003d1f',
+          }
         }
       },
       backgroundImage: {

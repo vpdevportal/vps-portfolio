@@ -2,17 +2,17 @@
 import { resumeData } from '../data/resume';
 ---
 
-<section id="home" class="section-container min-h-screen flex items-center justify-center relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-hero opacity-10 blur-3xl"></div>
+<section id="home" class="section-container min-h-screen flex items-center justify-center relative overflow-hidden green-gradient-bg">
+  <div class="absolute inset-0 bg-gradient-to-br from-green-gradient-start/20 via-green-gradient-end/10 to-transparent"></div>
   
-  <div class="relative z-10 text-center max-w-4xl mx-auto">
+  <div class="relative z-10 text-center w-full max-w-6xl mx-auto px-4">
     <h1 class="text-5xl md:text-7xl font-bold mb-6">
       <span class="gradient-text">{resumeData.personalInfo.name || 'Your Name'}</span>
     </h1>
-    <p class="text-2xl md:text-3xl text-gray-300 mb-8">
+    <p class="text-2xl md:text-3xl text-white mb-8">
       {resumeData.personalInfo.title || 'Software Developer'}
     </p>
-    <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+    <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
       Building innovative solutions with modern technology
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -26,7 +26,7 @@ import { resumeData } from '../data/resume';
   </div>
 
   <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <a href="#about" class="text-gray-400 hover:text-accent-primary transition-colors">
+    <a href="#about" class="text-white/60 hover:text-white transition-colors">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>

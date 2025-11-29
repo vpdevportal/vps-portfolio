@@ -2,8 +2,8 @@
 import { resumeData } from '../data/resume';
 ---
 
-<section id="experience" class="section-container bg-dark-surface">
-  <div class="max-w-6xl mx-auto">
+<section id="experience" class="section-container bg-dark-bg">
+  <div class="w-full max-w-7xl mx-auto">
     <h2 class="section-title text-center mb-4">Experience</h2>
     <p class="section-subtitle text-center mb-12">
       My professional journey
@@ -26,7 +26,7 @@ import { resumeData } from '../data/resume';
             {exp.description.length > 0 && (
               <ul class="space-y-2 mt-4">
                 {exp.description.map((desc) => (
-                  <li class="text-gray-400 flex items-start">
+                  <li class="text-gray-300 flex items-start">
                     <span class="text-accent-primary mr-2">•</span>
                     <span>{desc}</span>
                   </li>
@@ -35,12 +35,12 @@ import { resumeData } from '../data/resume';
             )}
             
             {exp.achievements && exp.achievements.length > 0 && (
-              <div class="mt-4 pt-4 border-t border-gray-800">
-                <h4 class="text-sm font-semibold text-gray-500 mb-2">Key Achievements:</h4>
+              <div class="mt-4 pt-4 border-t border-gray-900">
+                <h4 class="text-sm font-semibold text-gray-400 mb-2">Key Achievements:</h4>
                 <ul class="space-y-2">
                   {exp.achievements.map((achievement) => (
-                    <li class="text-gray-400 flex items-start">
-                      <span class="text-accent-secondary mr-2">✓</span>
+                    <li class="text-gray-300 flex items-start">
+                      <span class="text-accent-primary mr-2">✓</span>
                       <span>{achievement}</span>
                     </li>
                   ))}
