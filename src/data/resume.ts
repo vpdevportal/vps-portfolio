@@ -6,10 +6,13 @@ export interface ResumeData {
     name: string;
     title: string;
     email: string;
+    personalEmail?: string;
     phone: string;
     location: string;
     linkedin?: string;
     github?: string;
+    facebook?: string;
+    instagram?: string;
     website?: string;
   };
   experience: Array<{
@@ -39,91 +42,128 @@ export const resumeData: ResumeData = {
   "personalInfo": {
     "name": "Vaisakh Prakash",
     "title": "Polyglot Full Stack Software Engineer",
-    "email": "ysakhaprakash@gmail.com",
-    "phone": "",
+    "email": "vpdevportal@gmail.com",
+    "personalEmail": "ysakhaprakash@gmail.com",
+    "phone": "+91 9020249010",
     "location": "",
-    "linkedin": "linkedin.com/in/vaisakh-prakash"
+    "linkedin": "https://www.linkedin.com/in/vaisakh-prakash/",
+    "facebook": "https://www.facebook.com/ysakhaprakash",
+    "instagram": "https://www.instagram.com/ysakhprakash/"
   },
   "experience": [
     {
-      "company": "",
-      "role": "EXPERIENCE",
-      "startDate": "2020",
+      "company": "IQTrek Consulting",
+      "role": "Senior Architect | AI & Full Stack Engineering",
+      "startDate": "Aug 2025",
       "endDate": "Present",
-      "description": [],
+      "description": [
+        "Leading AI and full stack engineering initiatives",
+        "Architecting scalable solutions using modern technologies",
+        "Working with OpenAI API and Next.js frameworks"
+      ],
       "achievements": []
     },
     {
-      "company": "",
-      "role": "2020 -  ****\tKeHE Distributors / The Bridge (now North Highland)",
-      "startDate": "September 2020",
-      "endDate": "Present",
-      "description": [],
+      "company": "North Highland",
+      "role": "Software Engineering Consultant",
+      "startDate": "Sep 2020",
+      "endDate": "Jul 2025",
+      "description": [
+        "Consulted on software engineering projects for enterprise clients",
+        "Developed and maintained full stack applications",
+        "Worked with modern web technologies including Angular and Heroku"
+      ],
       "achievements": []
     },
     {
-      "company": "",
-      "role": "Full Stack Developer               September 2020 - PRESENT",
-      "startDate": "2017",
-      "endDate": "Present",
-      "description": [],
+      "company": "Auxo Technology Labs Private Limited",
+      "role": "Data Scientist",
+      "startDate": "Mar 2017",
+      "endDate": "Sep 2020",
+      "description": [
+        "Developed machine learning and deep learning models",
+        "Worked on data science projects using Java and deep learning frameworks",
+        "Applied advanced analytics to solve complex business problems"
+      ],
       "achievements": []
     },
     {
-      "company": "",
-      "role": "2017 -  2020\tAuxo Technology Labs Private Limited",
-      "startDate": "March 2017",
-      "endDate": "Present",
-      "description": [],
+      "company": "QBurst",
+      "role": "Software Engineer",
+      "startDate": "Sep 2012",
+      "endDate": "Feb 2017",
+      "description": [
+        "Developed software solutions using various technologies",
+        "Worked with big data technologies including Oozie",
+        "Applied deep learning techniques in software development"
+      ],
       "achievements": []
     }
   ],
   "skills": [
-    "SeniorSoftware Engineer    September 2012 - February 2017",
-    "Languages& Frameworks",
-    "Web& Mobile Development",
-    "iOS(Swift",
-    "Objective-C)",
-    "Android",
-    "Flutter",
-    "NativeScript",
-    "Salesforce SDK",
-    "BigData & Machine Learning",
-    "ApacheSpark (MLlib)",
+    "Google Gemini",
+    "OpenAI API",
+    "FastAPI",
+    "Next.js",
+    "Nest.js",
+    "Unit Testing",
+    "Microservices",
+    "JSON Web Token (JWT)",
+    "Kendo UI",
+    "Angular CLI",
+    "Angular Material",
+    "RxJS",
+    "NLTK",
+    "Heroku",
+    "Django",
+    "Bootstrap (Framework)",
+    "Quarkus",
+    "Amazon SQS",
+    "Amazon Simple Notification Service (SNS)",
+    "Serverless Framework",
+    ".NET Core",
+    "Entity Framework",
+    "Angular",
+    "Amazon S3",
+    "AWS Lambda",
+    "Amazon Web Services (AWS)",
+    "Django REST Framework",
+    "Dart",
+    "AngularJS",
+    "C#",
+    "Python (Programming Language)",
+    "Java",
+    "Big Data",
     "Hadoop",
-    "HDFS",
-    "Hive",
-    "YARN",
-    "HBase",
-    "Mahout",
-    "DeepLearning4J",
-    "WordVec",
-    "LSTM",
-    "NLP (Stanford NLP",
+    "Deep Learning",
+    "Natural Language Processing",
     "GATE",
-    "Natty",
-    "YACC",
-    "NER)",
-    "SentiWordNet",
-    "DevOps& Infrastructure",
-    "Databases",
-    "PostgreSQL",
-    "MongoDB",
-    "MySQL",
-    "Redis",
-    "HBase",
-    "Elasticsearch",
-    "GraphDB",
-    "Lucene",
-    "TitanDB",
-    "DataTools & ETL",
-    "ApacheSqoop",
-    "Apache Flume",
-    "Apache Nutch",
-    "JSoup",
-    "MapReduce",
     "Hive",
-    "Dropwizard"
+    "Apache Flume",
+    "Apache Spark",
+    "Oozie",
+    "MapReduce",
+    "Dropwizard",
+    "Mahout",
+    "Artificial Neural Networks",
+    "Sentiment Analysis",
+    "Decision Trees",
+    "MongoDB",
+    "PostgreSQL",
+    "Oracle Database",
+    "MySQL",
+    "Optical Character Recognition (OCR)",
+    "iOS Development",
+    "Android Development",
+    "Salesforce iOS SDK",
+    "Facebook API",
+    "Instagram API",
+    "Twitter Stream",
+    "Web Crawling",
+    "Nutch",
+    "GIT",
+    "SQL",
+    "Graph Databases"
   ],
   "education": [
     {
