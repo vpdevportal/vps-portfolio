@@ -2,35 +2,56 @@
 import { resumeData } from '../data/resume';
 ---
 
-<section id="home" class="section-container min-h-screen flex items-center justify-center relative overflow-hidden green-gradient-bg">
-  <div class="absolute inset-0 bg-gradient-to-br from-green-gradient-start/20 via-green-gradient-end/10 to-transparent"></div>
+<section id="home" class="section-container min-h-screen flex items-center justify-center relative overflow-hidden">
+  <!-- Animated gradient orbs -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-primary/20 rounded-full blur-3xl animate-pulse-slow floating"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-secondary/20 rounded-full blur-3xl animate-pulse-slow floating" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-accent-tertiary/20 rounded-full blur-3xl animate-pulse-slow floating" style="animation-delay: 2s;"></div>
+  </div>
   
   <div class="relative z-10 text-center w-full max-w-6xl mx-auto px-4">
-    <h1 class="text-5xl md:text-7xl font-bold mb-6">
-      <span class="gradient-text">{resumeData.personalInfo.name || 'Your Name'}</span>
+    <div class="fade-in-up">
+      <div class="inline-block mb-6 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+        <span class="text-sm text-gray-300">Welcome to my portfolio</span>
+      </div>
+    </div>
+    
+    <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 fade-in-up animate-delay-200">
+      <span class="gradient-text block">{resumeData.personalInfo.name || 'Your Name'}</span>
     </h1>
-    <p class="text-2xl md:text-3xl text-white mb-8">
+    
+    <p class="text-3xl md:text-4xl lg:text-5xl text-white mb-6 font-light fade-in-up animate-delay-300">
       {resumeData.personalInfo.title || 'Software Developer'}
     </p>
-    <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-      Building innovative solutions with modern technology
+    
+    <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed fade-in-up animate-delay-400">
+      Crafting digital experiences with <span class="gradient-text font-semibold">cutting-edge technology</span> and innovative solutions
     </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#contact" class="btn-primary">
-        Get In Touch
+    
+    <div class="flex flex-col sm:flex-row gap-6 justify-center fade-in-up animate-delay-500">
+      <a href="#contact" class="btn-primary group">
+        <span class="relative z-10">Get In Touch</span>
+        <svg class="w-5 h-5 inline-block ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
       </a>
-      <a href="#resume" class="btn-secondary">
-        View Resume
+      <a href="#resume" class="btn-secondary group">
+        <span class="relative z-10">View Resume</span>
+        <svg class="w-5 h-5 inline-block ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
       </a>
     </div>
   </div>
 
-  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <a href="#about" class="text-white/60 hover:text-white transition-colors">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 fade-in animate-delay-500">
+    <a href="#about" class="flex flex-col items-center text-white/40 hover:text-white transition-all duration-300 group">
+      <span class="text-sm mb-2">Scroll</span>
+      <svg class="w-6 h-6 animate-bounce group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
     </a>
   </div>
 </section>
-

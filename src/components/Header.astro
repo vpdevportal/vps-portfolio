@@ -11,42 +11,46 @@ const navItems = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/95 backdrop-blur-md border-b border-gray-900">
+<header class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/80 backdrop-blur-xl border-b border-white/10 transition-all duration-300" id="header">
   <nav class="w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24">
-    <div class="flex items-center justify-between h-16">
-      <a href="#home" class="text-xl font-bold text-white">
-        {resumeData.personalInfo.name || 'Portfolio'}
+    <div class="flex items-center justify-between h-20">
+      <a href="#home" class="text-2xl font-bold gradient-text hover:scale-105 transition-transform duration-300">
+        {resumeData.personalInfo.name?.split(' ').map(n => n[0]).join('') || 'P'}
       </a>
       
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden md:flex items-center space-x-1">
         {navItems.map((item) => (
           <a
             href={item.href}
-            class="text-white/80 hover:text-white transition-colors duration-200"
+            class="px-4 py-2 rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-all duration-300 relative group"
           >
-            {item.label}
+            <span class="relative z-10">{item.label}</span>
+            <span class="absolute inset-0 rounded-lg bg-gradient-to-r from-accent-primary/20 to-accent-tertiary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           </a>
         ))}
       </div>
 
       <button
         id="mobile-menu-button"
-        class="md:hidden text-gray-300 hover:text-accent-primary"
+        class="md:hidden text-gray-300 hover:text-accent-primary transition-colors p-2 rounded-lg hover:bg-white/5"
         aria-label="Toggle menu"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
   </nav>
 
-  <div id="mobile-menu" class="hidden md:hidden bg-dark-bg border-t border-gray-900">
-    <div class="px-4 py-4 space-y-4">
+  <div id="mobile-menu" class="hidden md:hidden bg-dark-bg/95 backdrop-blur-xl border-t border-white/10">
+    <div class="px-4 py-6 space-y-2">
       {navItems.map((item) => (
         <a
           href={item.href}
-          class="block text-gray-300 hover:text-accent-primary transition-colors duration-200"
+          class="block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300"
         >
           {item.label}
         </a>
@@ -58,10 +62,17 @@ const navItems = [
 <script>
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
 
   if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
       mobileMenu.classList.toggle('hidden');
+      if (menuIcon && closeIcon) {
+        menuIcon.classList.toggle('hidden', !isHidden);
+        closeIcon.classList.toggle('hidden', isHidden);
+      }
     });
   }
 
@@ -70,7 +81,27 @@ const navItems = [
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu?.classList.add('hidden');
+      if (menuIcon && closeIcon) {
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
     });
+  });
+
+  // Header scroll effect
+  let lastScroll = 0;
+  const header = document.getElementById('header');
+  
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+      header?.classList.add('bg-dark-bg/95');
+    } else {
+      header?.classList.remove('bg-dark-bg/95');
+    }
+    
+    lastScroll = currentScroll;
   });
 </script>
 
