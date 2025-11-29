@@ -2,58 +2,63 @@
 import { resumeData } from '../data/resume';
 ---
 
-<section id="about" class="section-container">
+<section id="about" class="section-container relative">
   <div class="w-full max-w-7xl mx-auto">
-    <h2 class="section-title text-center mb-4">About Me</h2>
-    <p class="section-subtitle text-center mb-12">
-      Get to know me better
-    </p>
+    <div class="text-center mb-16 fade-in-up">
+      <h2 class="section-title gradient-text">About Me</h2>
+      <p class="section-subtitle">
+        Get to know me better
+      </p>
+    </div>
 
     <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div class="flex justify-center">
-        <img
-          src="/profile.png"
-          alt={resumeData.personalInfo.name}
-          class="w-64 h-64 rounded-full object-cover border-4 border-accent-primary shadow-lg shadow-accent-primary/20"
-        />
+      <div class="flex justify-center slide-in-left">
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-r from-accent-primary via-accent-secondary to-accent-tertiary rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+          <img
+            src="/profile.png"
+            alt={resumeData.personalInfo.name}
+            class="relative w-72 h-72 rounded-full object-cover border-4 border-white/20 shadow-2xl group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
       </div>
 
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-2xl font-bold mb-4 gradient-text">
+      <div class="space-y-6 slide-in-right">
+        <div class="glass-card">
+          <h3 class="text-3xl font-bold mb-4 gradient-text">
             {resumeData.personalInfo.name || 'Your Name'}
           </h3>
-          <p class="text-gray-300 leading-relaxed mb-4">
+          <p class="text-gray-300 leading-relaxed mb-4 text-lg">
             {resumeData.personalInfo.title || 'Software Developer'} passionate about creating
             innovative solutions and building impactful applications.
           </p>
-          <p class="text-gray-300 leading-relaxed">
+          <p class="text-gray-300 leading-relaxed text-lg">
             With a strong foundation in modern web technologies and a commitment to
             continuous learning, I strive to deliver high-quality software that makes a difference.
           </p>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 pt-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {resumeData.personalInfo.email && (
-            <div>
-              <p class="text-sm text-gray-500 mb-1">Email</p>
-              <a href={`mailto:${resumeData.personalInfo.email}`} class="text-accent-primary hover:underline">
+            <div class="glass-card hover:scale-105 transition-transform">
+              <p class="text-sm text-gray-400 mb-2 uppercase tracking-wide">Email</p>
+              <a href={`mailto:${resumeData.personalInfo.email}`} class="text-accent-primary hover:text-accent-secondary transition-colors font-medium">
                 {resumeData.personalInfo.email}
               </a>
             </div>
           )}
           {resumeData.personalInfo.phone && (
-            <div>
-              <p class="text-sm text-gray-500 mb-1">Phone</p>
-              <a href={`tel:${resumeData.personalInfo.phone}`} class="text-accent-primary hover:underline">
+            <div class="glass-card hover:scale-105 transition-transform">
+              <p class="text-sm text-gray-400 mb-2 uppercase tracking-wide">Phone</p>
+              <a href={`tel:${resumeData.personalInfo.phone}`} class="text-accent-primary hover:text-accent-secondary transition-colors font-medium">
                 {resumeData.personalInfo.phone}
               </a>
             </div>
           )}
           {resumeData.personalInfo.location && (
-            <div>
-              <p class="text-sm text-gray-500 mb-1">Location</p>
-              <p class="text-gray-300">{resumeData.personalInfo.location}</p>
+            <div class="glass-card hover:scale-105 transition-transform sm:col-span-2">
+              <p class="text-sm text-gray-400 mb-2 uppercase tracking-wide">Location</p>
+              <p class="text-gray-300 font-medium">{resumeData.personalInfo.location}</p>
             </div>
           )}
         </div>
@@ -61,4 +66,3 @@ import { resumeData } from '../data/resume';
     </div>
   </div>
 </section>
-

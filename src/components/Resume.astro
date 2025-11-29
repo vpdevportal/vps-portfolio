@@ -1,42 +1,59 @@
 ---
 ---
 
-<section id="resume" class="section-container bg-dark-bg">
+<section id="resume" class="section-container bg-dark-bg/50 relative">
   <div class="w-full max-w-7xl mx-auto text-center">
-    <h2 class="section-title mb-4">Resume</h2>
-    <p class="section-subtitle mb-12">
-      Download my resume in your preferred format
-    </p>
+    <div class="mb-16 fade-in-up">
+      <h2 class="section-title gradient-text">Resume</h2>
+      <p class="section-subtitle">
+        Download my resume in your preferred format
+      </p>
+    </div>
 
-    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+    <div class="flex flex-col sm:flex-row gap-8 justify-center max-w-4xl mx-auto">
       <a
         href="/resume.pdf"
         download
-        class="card hover:border-accent-primary transition-all duration-300 group"
+        class="group glass-card hover:scale-105 transition-all duration-300 flex-1 max-w-sm"
       >
         <div class="flex flex-col items-center">
-          <svg class="w-16 h-16 mb-4 text-accent-primary group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg>
-          <h3 class="text-xl font-bold mb-2 text-white">PDF Format</h3>
-          <p class="text-gray-300 text-sm">Download PDF resume</p>
+          <div class="relative mb-6">
+            <div class="absolute inset-0 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+            <div class="relative w-20 h-20 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold mb-2 text-white group-hover:gradient-text transition-all">PDF Format</h3>
+          <p class="text-gray-300 text-sm mb-4">Download PDF resume</p>
+          <span class="text-accent-primary text-sm font-medium group-hover:translate-x-1 inline-block transition-transform">
+            Download →
+          </span>
         </div>
       </a>
 
       <a
         href="/resume.docx"
         download
-        class="card hover:border-accent-primary transition-all duration-300 group"
+        class="group glass-card hover:scale-105 transition-all duration-300 flex-1 max-w-sm"
       >
         <div class="flex flex-col items-center">
-          <svg class="w-16 h-16 mb-4 text-accent-primary group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg>
-          <h3 class="text-xl font-bold mb-2 text-white">DOCX Format</h3>
-          <p class="text-gray-300 text-sm">Download DOCX resume</p>
+          <div class="relative mb-6">
+            <div class="absolute inset-0 bg-gradient-to-r from-accent-secondary to-accent-tertiary rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+            <div class="relative w-20 h-20 rounded-full bg-gradient-to-r from-accent-secondary to-accent-tertiary flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold mb-2 text-white group-hover:gradient-text transition-all">DOCX Format</h3>
+          <p class="text-gray-300 text-sm mb-4">Download DOCX resume</p>
+          <span class="text-accent-primary text-sm font-medium group-hover:translate-x-1 inline-block transition-transform">
+            Download →
+          </span>
         </div>
       </a>
     </div>
   </div>
 </section>
-
